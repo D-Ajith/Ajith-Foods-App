@@ -13,14 +13,15 @@ import 'react-toastify/dist/ReactToastify.css';
 import Signup from './Auth/Signup';
 import Login from './Auth/Login';
 import Welcome from './Pages/Welcome';
-
+import baseURL from './baseURL';
 const App = () => {
   const [data, setData] = useState([]);
   const [categories, setCategories] = useState([]);
   const location = useLocation(); // 👈 Get current route
 
   useEffect(() => {
-   fetch("https://thingproxy.freeboard.io/fetch/https://api.jsonbin.io/v3/b/6865023f8a456b7966b9fcc4")
+
+fetch(`${baseURL}api/data`)
       .then((res) => res.json())
       .then((res) => {
         const records = res.record;
