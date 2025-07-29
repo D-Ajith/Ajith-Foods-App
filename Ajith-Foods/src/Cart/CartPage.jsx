@@ -62,7 +62,7 @@ const triggerConfetti = () => {
        triggerConfetti();
       },
       prefill: {
-        name: "Ajith",
+        name: "Test Name",
         email: "ajith@example.com",
         contact: "9999999999"
       },
