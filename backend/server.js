@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const axios = require('axios');
 require('dotenv').config();
-
+const dns = require('dns');
+dns.setDefaultResultOrder('ipv4first');
 const allowedOrigins = ["http://localhost:5173","https://ajith-foods-app.vercel.app"]; // Ensure full origin including https
 
 const app = express();
