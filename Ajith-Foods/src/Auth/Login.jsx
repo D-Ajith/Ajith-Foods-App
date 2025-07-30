@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate, Link } from 'react-router-dom';
-
+import baseURL from '../baseURL';
 const Login = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: '', password: '' });
@@ -15,7 +15,8 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', form);
+      
+      const res = await axios.post(`${baseURL}api/auth/login`, form);
       localStorage.setItem('token', res.data.token);
       toast.success('Login successful!');
       navigate('/home');
