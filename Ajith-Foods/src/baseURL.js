@@ -1,2 +1,2 @@
-const baseURL = "https://ajith-foods-app.onrender.com/";
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 export default baseURL;
